@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoDash - Painel de Sustentabilidade</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Menu Superior com Controle de Abas -->
+    <header class="navbar">
+        <div class="logo"><i class="fa-solid fa-leaf text-glow"></i> EcoDash</div>
+        <nav id="tab-menu">
+            <button class="nav-link active" data-target="aba-simulador"><i class="fa-solid fa-calculator"></i> Simulador</button>
+            <button class="nav-link" data-target="aba-dicas"><i class="fa-solid fa-lightbulb"></i> Dicas Práticas</button>
+            <button class="nav-link" data-target="aba-sobre"><i class="fa-solid fa-graduation-cap"></i> Sobre o Projeto</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <!-- ================= ABA 1: SIMULADOR ================= -->
+        <section id="aba-simulador" class="tab-content active-content fade-in">
+            <div class="hero-section">
+                <h1>O Futuro Sustentável<br><span class="text-gradient">Começa Aqui.</span></h1>
+                <p>Monitore suas emissões de carbono e alinhe seu estilo de vida ao equilíbrio ecológico do campo e da cidade.</p>
+            </div>
+
+            <div class="card-calculadora">
+                <h2><i class="fa-solid fa-gauge-high"></i> Calculadora de Carbono</h2>
+                <p class="subtitulo">Preencha os dados de consumo mensal da sua residência:</p>
+
+                <form id="form-carbono">
+                    <div class="input-group">
+                        <label for="energia"><i class="fa-solid fa-bolt"></i> Energia Elétrica (kWh/mês):</label>
+                        <input type="number" id="energia" placeholder="Ex: 150" required min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="combustivel"><i class="fa-solid fa-gas-pump"></i> Combustível (Litros de Gasolina/mês):</label>
+                        <input type="number" id="combustivel" placeholder="Ex: 50" required min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="residuos"><i class="fa-solid fa-trash-can"></i> Resíduos Não-Recicláveis (Kg/mês):</label>
+                        <input type="number" id="residuos" placeholder="Ex: 15" required min="0">
+                    </div>
+
+                    <button type="submit" class="btn-calcular">
+                        <span>Analisar Impacto</span> <i class="fa-solid fa-chart-line"></i>
+                    </button>
+                </form>
+
+                <!-- Janela de Resultado Totalmente Diferenciada -->
+                <div id="resultado-container" class="resultado-box hidden">
+                    <div class="resultado-header">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                        <h3>Análise Detalhada de Impacto</h3>
+                    </div>
+                    
+                    <p id="resultado-texto"></p>
+                    <div class="badge-sustentavel" id="badge-status"></div>
+
+                    <!-- Diferencial: Gráfico Visual em CSS -->
+                    <div class="grafico-container">
+                        <div class="label-grafico">Nível Geral de Emissão de CO₂:</div>
+                        <div class="barra-fundo">
+                            <div id="barra-progresso" class="barra-preenchimento"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABA 2: DICAS PRÁTICAS ================= -->
+        <section id="aba-dicas" class="tab-content fade-in">
+            <h2><i class="fa-solid fa-hand-holding-seedling text-glow"></i> Guia Agro Sustentável</h2>
+            <p class="subtitulo">Ações práticas baseadas no tema do Agrinho 2026 para neutralizar emissões:</p>
+
+            <div class="grid-dicas">
+                <div class="card-dica">
+                    <i class="fa-solid fa-tree"></i>
+                    <h3>Plantio de Árvores</h3>
+                    <p>Uma única árvore nativa da Mata Atlântica absorve cerca de 150kg de CO₂ ao longo de seu crescimento.</p>
+                </div>
+                <div class="card-dica">
+                    <i class="fa-solid fa-solar-panel"></i>
+                    <h3>Energia Limpa</h3>
+                    <p>Substituir fontes tradicionais por painéis solares ou reduzir o desperdício diminui a pegada elétrica a zero.</p>
+                </div>
+                <div class="card-dica">
+                    <i class="fa-solid fa-recycle"></i>
+                    <h3>Compostagem</h3>
+                    <p>Transformar restos de alimentos em adubo reduz a emissão de gás metano nos aterros sanitários.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABA 3: SOBRE O PROJETO ================= -->
+        <section id="aba-sobre" class="tab-content fade-in">
+            <div class="card-info">
+                <h2><i class="fa-solid fa-landmark"></i> Concurso Agrinho 2026</h2>
+                <p class="tema-agrinho">"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
+                <p>Este painel tecnológico foi construído com foco na experiência do usuário para aproximar a comunidade escolar dos conceitos de sustentabilidade e balanço de carbono.</p>
+                
+                <div class="creditos-grid">
+                    <div class="credito-item">
+                        <i class="fa-solid fa-code"></i>
+                        <div>
+                            <span>Desenvolvedor do Sistema</span>
+                            <strong>Matheus Henrique Lourenço</strong>
+                            <small>1º Ano A</small>
+                        </div>
+                    </div>
+                    <div class="credito-item">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <div>
+                            <span>Orientação</span>
+                            <strong>Prof. Alex</strong>
+                        </div>
+                    </div>
+                    <div class="credito-item full-width">
+                        <i class="fa-solid fa-school"></i>
+                        <div>
+                            <span>Instituição</span>
+                            <strong>Colégio Estadual Angelina A. C. do Prado</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
